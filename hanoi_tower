@@ -1,0 +1,16 @@
+import time
+
+def count_step(n): #Фича, считающая количество шагов для башни мощностью n
+    return 1 if n==1 else count_step(n-1)*2+1
+
+def hanoi_tower(n:int,A,B,tmp): 
+   if n==0: #Крайний случай рекурсии
+       return (A,B,tmp)
+   hanoi_tower(n-1,A,tmp,B) #Первый рекуррентный вызов
+   time.sleep(1) #Для того, чтобы каждая строка выводилась через секунду, облегчая чтение
+   print(A, "->", tmp) 
+   hanoi_tower(n-1,B,A,tmp) #Второй рекуррентный вызов
+   
+n=int(input())
+print('this tower will move into B in',count_step(n),'steps')
+hanoi_tower(n,'a','tmp','b')
