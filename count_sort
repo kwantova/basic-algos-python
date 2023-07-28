@@ -1,0 +1,15 @@
+N=int(input('Введите количество элементов для сортировки: '))
+F=[0]*10
+print('Введите',N,'чисел:\n')
+for i in range (N):
+    x=int(input())
+    F[x]+=1
+try:
+    len(F)<10
+except:
+    while len(F)!=10:
+        F.append(0) 
+g=0
+for i in range (len(F)):
+    print('Цифра',g,'встречается',F[i],'раз')
+    g+=1
