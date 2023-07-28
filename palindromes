@@ -1,0 +1,10 @@
+word=list(input('Введите строку для анализа: '))
+box=[0]*len(word)
+count=0
+for i in range(len(word)-1,-1,-1):
+    box[count]=word[i]
+    count+=1
+if word==box:
+    print('Cтрока является палиндромом')
+else:
+    print('Строка не является палиндромом')
