@@ -1,0 +1,21 @@
+from sys import exit
+from time import sleep
+print('Задумайте число от 1 до 1000, я угадаю его за 9 вопросов. Начнем?')
+sleep(1)
+power=9
+divider=2
+border=0
+border=2**power
+while power!=0:
+    print('Ваше число больше или равно',round(border),'?')
+    state=input('"y", если больше, "n", если меньше, "r", если равно\n')
+    power-=1
+    if state=='y':
+        border+=2**power
+    elif state=='n':
+        border-=2**power
+    elif state=='r':
+        break
+    divider*=2    
+print('Ваше число:',round(border))
+        
