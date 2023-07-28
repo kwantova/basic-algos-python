@@ -1,0 +1,31 @@
+#1. Рекурсивная
+
+def factorial(N:int):
+    assert N>=0, 'Факториал - понятие, применимое лишь к натуральным числам'
+    if N==0:
+        return 1
+    return factorial(N-1)*N
+def double_factorial(n:int):
+    assert n>=0
+    if n==0:
+        return 1
+    return double_factorial(n-2)*n
+
+​
+
+#2. Без рекурсии:
+
+N = int(input('Введите натуральное число: '))
+if N%2==0:
+    flag=True
+else:
+    flag=False
+factorial = N
+double_factorial = N
+for i in range(1,N):
+    factorial*=i
+    if i%2!=0 and flag==True or i%2==0 and flag==False:
+        continue
+    else:
+        double_factorial*=i
+print(factorial,double_factorial)   
