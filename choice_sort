@@ -1,0 +1,27 @@
+from random import randint
+from sys import exit
+
+way=int(input('Введите 0 для генерации рандомных чисел, 1 для ввода с клавиатуры:\n'))
+I=[]
+k=1
+while k!=0:
+    if way==0:
+        k=randint(0,100)
+        I.append(k)
+    elif way==1:
+        k=int(input())
+        I.append(k)
+    else:
+        print('Ошибка!')
+        exit()
+I.pop()       
+print('Исходный массив:',I)
+def choise_sort(I):
+            ‘’’Сортировка списка I выбором’’’
+            N=len(I)
+            for pos in range(0,N-1):
+                        for k in range(pos+1,N):
+                                   if I[k]<I[pos]:
+                                               I[k],I[pos]=I[pos],I[k]
+            print(‘отсортированный массив:’,I)
+choise_sort(I)
