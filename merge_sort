@@ -1,0 +1,37 @@
+def merge(A:list,B:list):
+    C=[0]*(len(A)+len(B))
+    a_count=b_count=n=0
+    while a_count<len(A) and b_count<len(B):
+        if A[a_count]<=B[b_count]:
+            C[n]=A[a_count]
+            i+=1
+            n+=1
+        else:
+            C[n]=B[b_count]
+            k+=1
+            n+=1
+    while a_count<len(A):
+        C[n]=A[a_count]
+        n+=1
+        a_count+=1
+    while b_count<len(B):
+        C[n]=B[b_count]
+        n+=1
+        b_count+=1
+    return C
+def merge_sort(A):
+    if len(A)<=0:
+        return
+    middle=len(A)//2
+    global L,R
+    for i in range (0,middle):
+        L=[A[i]] 
+    for i in range (middle,len(A)):
+        R=[A[i]] 
+    merge_sort(L)
+    merge_sort(R)
+
+    C=merge(L,R)
+A=[]    
+for i in range(len(A)):
+    A[i]=C[i]
