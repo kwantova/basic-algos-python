@@ -1,0 +1,23 @@
+#По заданному номеру месяца определить время года, к которому он относится.
+spring=(3,4,5)
+winter=(1,2,12)
+autumn=(9,10,11)
+summer=(6,7,8)
+def season(MonthNumber):
+    if MonthNumber in winter:
+        Season = 'зима'
+    elif MonthNumber in spring:
+        Season = 'весна'
+    elif MonthNumber in summer:
+        Season = 'лето'
+    elif MonthNumber in autumn:
+        Season = 'осень'
+    else:
+        pass
+    try:
+        MonthNumber>12 or MonthNumber<1
+    except:        
+        return
+    print(*Season, sep='')
+MonthNum = int(input())
+season(MonthNum)
