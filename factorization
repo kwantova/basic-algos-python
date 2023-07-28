@@ -1,0 +1,9 @@
+def factorize(x):
+    divisor=2
+    while x>1:
+        if x%divisor==0:
+            print('Множитель:',divisor)
+            x//=divisor
+        else:
+            divisor+=1
+factorize(int(input('Введите число для разложения на множители:')))
