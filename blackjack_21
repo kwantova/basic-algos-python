@@ -1,0 +1,35 @@
+import random
+koloda=[i for i in range(1,12)]
+random.shuffle(koloda)
+print('Сыграем в блэкджек?')
+def play():
+    global flag
+    flag=False
+    count = 0
+    while True:
+        choice = input('Будете брать карту? y/n\n')
+        if choice == 'y':
+            current = koloda.pop()
+            print('Вам попалась карта достоинством',current)
+            count += current
+            if count > 21:
+                flag = True
+                print('Извините, но вы проиграли')
+                return
+            elif count == 21:
+                print('Поздравляю, вы набрали 21!')
+                flag = True
+                return
+            else:
+                print('У вас',count,'очков')
+        elif choice == 'n':
+            print('У ваc',count,'очков и вы закончили игру.')
+            break
+play()        
+if flag:
+    choice1 = input('Сыграем еще? y/n\n')
+    if choice1=='y':
+        play()
+        
+
+print('До новых встреч!')
