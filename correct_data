@@ -1,0 +1,11 @@
+def date(number,month,year):
+    if number<32 and number>0 and month<13 and month>0 and year>0:
+        result='Эта дата существует'
+    elif year%4==0 and year>0 or number==29 and month==2:
+        result='Эта дата существует'
+    else:
+        result='Этой даты не существует'
+    print(*result,sep='')
+number,month,year=tuple(input().split(' '))
+number = int(number); month = int(month); year=int(year)
+date(number,month,year)
