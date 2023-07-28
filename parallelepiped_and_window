@@ -1,0 +1,9 @@
+import math
+def will_it_move(a,b,c,S):
+    print ('Параллелепипед проходит' if min(a*b,b*c,a*c)<2*math.sqrt(S/math.pi) else 'Не проходит')
+
+a=int(input())
+b=int(input()) 
+c=int(input())
+S=int(input())
+will_it_move(a,b,c,S)
