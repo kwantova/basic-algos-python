@@ -1,0 +1,9 @@
+def is_prime(Num):
+    divisor=2
+    while divisor<Num:
+        if Num%divisor==0:
+            return 'число сложное'
+        divisor+=1
+    return 'число простое'
+num=int(input())
+print(is_prime(num))
