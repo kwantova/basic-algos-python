@@ -1,0 +1,12 @@
+from random import randint
+x=randint(0,9)
+for i in range(3):
+    n=int(input('Введите ваш вариант: '))
+    if x>n:
+        print('x >',n)
+    elif x<n:
+        print('x <',n)
+    else:
+        print('вы угадали!')
+        break
+print ('Это цифра',x)   
