@@ -1,0 +1,18 @@
+from random import choice
+
+def quicksort(I:list):
+   if len(I) <= 1:
+       return I
+   else:
+       q = choice(I)
+       L = []
+       M = []
+       R = []
+       for n in I:
+           if n < q:
+               L.append(n)
+           elif n > q:
+               R.append(n)
+           else:
+               M.append(n)
+       return quicksort(L) + M + quicksort(R)
