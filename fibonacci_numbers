@@ -1,0 +1,7 @@
+def fibr(N:int):
+    if N<=0:
+        return 0 #Для ряда 0,1,1,2,3,5...
+    elif N<=3:
+        return 1
+    return fibr(N-2)+fibr(N-1)
+print(fibr(int(input('Введите номер числа: '))))
